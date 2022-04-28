@@ -11,7 +11,7 @@ import java.util.List;
 
 @SpringBootApplication
 @CrossOrigin
-@RestController
+//@RestController
 public class MargaritaApplication {
 
 	public static void main(String[] args) {

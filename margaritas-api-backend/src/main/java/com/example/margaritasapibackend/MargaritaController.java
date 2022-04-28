@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@CrossOrigin
+//@CrossOrigin
 @RestController
 public class MargaritaController {
 
@@ -24,18 +24,18 @@ public class MargaritaController {
     }
 
     @GetMapping("/margaritas")
-    public List<Margarita> getGreetings() {
-        return repository.findAll();
+    public ResponseEntity<List<Margarita>> getMargaritas() {
+        return ResponseEntity.ok().body(repository.findAll());
     }
 
     @PostMapping("/margarita")
-    public String createGreeting(@RequestBody Margarita margarita) {
+    public ResponseEntity<String> createMargarita(@RequestBody Margarita margarita) {
         repository.save(margarita);
-        return "Margarita added";
+        return ResponseEntity.status(HttpStatus.CREATED).body("Margarita added");
     }
 
     @DeleteMapping("/margarita/{id}")
-    public ResponseEntity<String> deletePokemon(@PathVariable int id) {
+    public ResponseEntity<String> deleteMargarita(@PathVariable int id) {
         try {
             repository.deleteById(id);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body("Greeting with id of: " + id + " was deleted");

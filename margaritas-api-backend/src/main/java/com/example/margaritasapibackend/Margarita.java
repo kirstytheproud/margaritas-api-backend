@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 
-@Entity
+@Entity //Tell spring that this is a class we want to save in our external database
 public class Margarita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,7 @@ public class Margarita {
     private String image;
     private String createdBy;
 
+    // YOU NEED AN EMPTY CONSTRUCTOR
     public Margarita() {
     }
 
