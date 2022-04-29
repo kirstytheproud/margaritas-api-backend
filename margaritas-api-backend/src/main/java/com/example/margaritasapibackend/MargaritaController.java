@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
+@CrossOrigin
 @RestController
 public class MargaritaController {
 
